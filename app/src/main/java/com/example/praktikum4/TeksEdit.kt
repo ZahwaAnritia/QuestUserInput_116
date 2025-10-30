@@ -22,32 +22,44 @@ fun FormDataDiri(modifier: Modifier)
 
     Column(modifier = modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally){
+        horizontalAlignment = Alignment.CenterHorizontally) {
         OutlinedTextField(
             value = textNama,
             singleLine = true,
             shape = MaterialTheme.shapes.large,
-            label = { Text(text = "Nama Lengkap")},
+            label = { Text(text = "Nama Lengkap") },
             onValueChange = {
                 textNama = it
             }
         )
-        Row{
+        Row {
             gender.forEach { item ->
-                Row(modifier = modifier.selectable(
+                Row(
+                    modifier = modifier.selectable(
                     selected = textJK == item,
-                    onClick = { textJK = item}
-                ), verticalAlignment = Alignment.CenterVerticallay){
+                    onClick = { textJK = item }
+                ), verticalAlignment = Alignment.CenterVerticallay) {
                     RadioButton(
                         selected = textJK == item,
                         onClick = {
                             textJK = item
                         })
-                    Text(text =item)
+                    Text(text = item)
 
-            } }
+                }
+
+            }
+
         }
-
+        OutlinedTextField(
+            value = textAlamat,
+            singleLine = true,
+            modifier = Modifier.width(width = 250.dp),
+            label = {Text(text = "Alamat Lengkap")},
+            onValueChange = {
+                textAlamat = it
+            }
+        )
     }
 
 
