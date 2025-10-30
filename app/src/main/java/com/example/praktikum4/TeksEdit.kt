@@ -62,7 +62,7 @@ fun FormDataDiri(modifier: Modifier)
                     modifier = modifier.selectable(
                     selected = textJK == item,
                     onClick = { textJK = item }
-                ), verticalAlignment = Alignment.CenterVerticallay) {
+                ), verticalAlignment = Alignment.CenterVertically) {
                     RadioButton(
                         selected = textJK == item,
                         onClick = {
@@ -95,7 +95,7 @@ fun FormDataDiri(modifier: Modifier)
             color = Color.DarkGray
         )
         ElevatedCard (
-            elevation = CardDefaults.cardElevation(10.dp)
+            elevation = CardDefaults.cardElevation(10.dp),
             colors  = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier
                 .height(height = 100.dp)
