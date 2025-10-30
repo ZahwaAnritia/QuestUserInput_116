@@ -37,7 +37,14 @@ fun FormDataDiri(modifier: Modifier)
                 Row(modifier = modifier.selectable(
                     selected = textJK == item,
                     onClick = { textJK = item}
-                ))
+                ), verticalAlignment = Alignment.CenterVerticallay){
+                    RadioButton(
+                        selected = textJK == item,
+                        onClick = {
+                            textJK = item
+                        })
+                    Text(text =item)
+
             } }
         }
 
