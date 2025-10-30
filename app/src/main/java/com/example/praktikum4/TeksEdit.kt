@@ -1,12 +1,16 @@
 package com.example.praktikum4
 
 import androidx.compose.animation.core.withInfiniteAnimationFrameMillis
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.unit.dp
 import java.nio.file.WatchEvent
 
 
@@ -71,7 +75,19 @@ fun FormDataDiri(modifier: Modifier)
                 id = R.dimen.padding_medium
 
             )),
+            thickness = dimensionResource(id = R.dimen.divider_tipis),
+            color = Color.DarkGray
         )
+        ElevatedCard (
+            elevation = CardDefaults.cardElevation(10.dp)
+            colors  = CardDefaults.cardColors(containerColor = Color.Black),
+            modifier = Modifier
+                .height(height = 100.dp)
+                .width(width= 300.dp)
+        ){
+
+        }
+
     }
 
 
