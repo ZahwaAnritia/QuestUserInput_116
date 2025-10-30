@@ -1,5 +1,7 @@
 package com.example.praktikum4
 
+import androidx.compose.animation.core.withInfiniteAnimationFrameMillis
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
@@ -30,6 +32,14 @@ fun FormDataDiri(modifier: Modifier)
                 textNama = it
             }
         )
+        Row{
+            gender.forEach { item ->
+                Row(modifier = modifier.selectable(
+                    selected = textJK == item,
+                    onClick = { textJK = item}
+                ))
+            } }
+        }
 
     }
 
