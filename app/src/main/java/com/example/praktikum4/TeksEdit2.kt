@@ -93,6 +93,13 @@ fun FormDataDiri2(modifier: Modifier = Modifier) {
                     unfocusedBorderColor = Color.LightGray
                 )
             )
+            Text(
+                text = "JENIS KELAMIN",
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = Color.Gray,
+                modifier = Modifier.padding(top = 20.dp, bottom = 8.dp)
+            )
 
 
         }
