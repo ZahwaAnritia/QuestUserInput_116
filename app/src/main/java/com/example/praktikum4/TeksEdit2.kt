@@ -6,9 +6,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.RadioButton
@@ -176,6 +179,33 @@ fun FormDataDiri2(modifier: Modifier = Modifier) {
                     focusedBorderColor = Color.LightGray,
                     unfocusedBorderColor = Color.LightGray
                 )
+            )
+        }
+        Button(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 24.dp)
+                .height(50.dp),
+            enabled = textNama.isNotEmpty() && textJK.isNotEmpty() &&
+                    textStatus.isNotEmpty() && textAlamat.isNotEmpty(),
+            onClick = {
+                nama = textNama
+                jenis = textJK
+                status = textStatus
+                alamat = textAlamat
+                showDialog = true // Tampilkan pop-up
+            },
+            shape = RoundedCornerShape(25.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = purpleButton,
+                disabledContainerColor = purpleButton.copy(alpha = 0.5f)
+            )
+        ) {
+            Text(
+                text = "Submit",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
             )
         }
     }
