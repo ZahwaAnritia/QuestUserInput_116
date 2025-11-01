@@ -10,12 +10,14 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -207,6 +209,56 @@ fun FormDataDiri2(modifier: Modifier = Modifier) {
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
+        }
+        if (showDialog) {
+            AlertDialog(
+                onDismissRequest = { showDialog = false },
+                title = {
+                    Text(
+                        text = "Data Pendaftaran",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp
+                    )
+                },
+                text = {
+                    Column {
+                        Text(text = "Nama : $nama", fontSize = 14.sp)
+                        Text(
+                            text = "Gender : $jenis",
+                            fontSize = 14.sp,
+                            modifier = Modifier.padding(top = 4.dp)
+                        )
+                        Text(
+                            text = "Status : $status",
+                            fontSize = 14.sp,
+                            modifier = Modifier.padding(top = 4.dp)
+                        )
+                        Text(
+                            text = "Alamat : $alamat",
+                            fontSize = 14.sp,
+                            modifier = Modifier.padding(top = 4.dp)
+                        )
+                    }
+                },
+                confirmButton = {
+                    TextButton(
+                        onClick = {
+                            // Reset semua field input
+                            textNama = ""
+                            textAlamat = ""
+                            textJK = ""
+                            textStatus = ""
+                            showDialog = false
+                        }
+                    ) {
+                        Text("OK", color = purpleButton, fontWeight = FontWeight.Bold)
+                    }
+
+                },
+                containerColor = Color.White,
+                shape = RoundedCornerShape(16.dp)
+            )
+
         }
     }
 
