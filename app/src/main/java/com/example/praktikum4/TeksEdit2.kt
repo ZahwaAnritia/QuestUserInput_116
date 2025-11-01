@@ -67,6 +67,14 @@ fun FormDataDiri2(modifier: Modifier = Modifier) {
                 .background(Color.White, shape = RoundedCornerShape(12.dp))
                 .padding(16.dp)
         ){
+            Text(
+                text = "NAMA LENGKAP",
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = Color.Gray,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+
 
         }
     }
